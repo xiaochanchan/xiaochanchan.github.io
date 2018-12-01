@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SQL Server | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SQL Server">
+            
+	            SQL Server
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/11/15</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>746</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>数据库基本概念：实体和记录<br>实体：所有客观存在的，可以被描述的事物。<br>记录 ：每一行对应一个实体，在数据库中，通常叫做一条记录<br>数据冗余：数据重复的现象<br>数据完整性：数据库中数据的准确性。</p>
+<p>新建一个数据库：<br>1.在ssms中的菜单栏中选择“文件”——“连接对象资源管理器”选项，弹出“连接服务器对话框”。<br>2.在服务器名称 下拉列表框中选择连接过的服务器。也可以选择 浏览更多 选项来选择其他的服务器。<br>3需要身份验证： Windows身份验证 SQL Server身份验证。</p>
+<p>新建数据库登录名：<br>1.在安全性节点下，点击登录名，在弹出的快捷菜单中选择 新建登录名 选项<br>2.在新建登录对话框中数据登录名，密码，并指定其默认的数据库。<br>3.有了登录名，还需要赋予该登录名操作权限，否则它将只能连接到服务器，而没有任何操作权限。</p>
+<p>新建数据库用户：<br>1.在指定数据库安全性节点下，右击用户，在弹出的快捷菜单中选择“新建用户”选项。<br>2.在新建对话框中输入用户的名称，选择关联得到登录名，<br>有了用户名和关联登录名之后 还需要赋予用户对该数据库的操作权限。</p>
+<p>创建数据库:<br>1.数据库文件：存放数据库数据和数据库对象文件<br>2.事务日志文件：用来记录数据库的更新情况，在对数据库进行操作时，数据库中内容更改的操作信息都会记录在此文件中。<br>3.文件组：主要用于分配磁盘并进行管理</p>
+<p>分离和附加数据库：<br>1.右击数据库，在弹出快捷菜单中选择 任务 分离选项。将打开数据库窗口，可以对数据库执行分离操作。单击确定按钮以后，分离的数据库将不再显示在数据库列表中，但是其物理文件依然保存在磁盘中，此时磁盘文件可以复制 粘贴的。<br>2.把磁盘上的数据库文件复制到其他计算机后，通过附加 操作来恢复数据库。</p>
+<p>备份和还原数据库:<br>四种备份：完全备份，差异备份，事务日志备份，文件和文件组备份。</p>
+<p>收缩数据库分为：自动和手动。<br> 删除数据库：</p>
+<p>数据库完整性：<br>1.实体完整性约束：通过索引，唯一约束，主键约束或标识列属性，可以实现表的实体完整性。<br>2.域完整性约束：通过限制数据类型，检查约束，输入格式，外检约束，默认值，非空约束来实现<br>3引用完整性约束：再输入和删除数据行时，引用完整性约束来保持表之间已定义的关系。<br>4.自定义完整性约束：用户自定义完整性用来定义特定的规则。</p>
+<p>主键：用来唯一标识表中的每一行用于强制表的实体完整性.不允许有空值<br>外检：用来强制引用完整性。一个表可以有多个外键</p>
+<p>建立表间关系：<br>1.在设计表的时候，在成绩中点击右键，在弹出快捷菜单选择关系选项弹出外键关系对话框。单击添加按钮可以添加新的关系。<br>2单击表盒列的规范最右侧的小按钮，弹出要建立关系的逐渐表及主键列对话框<br>3选择逐渐表为xx，主键列为xx，对应的外键表为xx，列为xx</p>
+<p>Sql简介：<br>“结构化查询语句”，关系数据库的标准语言<br>sql的运算符     ‘ + ‘  ‘ - ‘  ‘ * ‘  ‘ / ‘  ‘ % ‘<br>赋值运算符     =<br>比较运算符      =  &gt;  &lt; &lt;&gt; &gt;= &lt;= !=<br>逻辑运算符     and  or  not<br>use            –使用<br>insert        –插入<br>into           –到<br>select        –选择<br>values       –值<br>default      –默认<br>from          –哪里<br>union        –并集；结合<br>delete       –删除<br>where       –哪里<br>update      –更新；更改<br>set             –设置<br>order by      –排序<br>asc             –升序<br>desc           –降序<br>percent       –百分比<br>T-SQL 里的两种注释<br>1、单行注释：   –<br>2、多行注释：  /**/</p>
+<p>增：<br>单行增加<br>方法1：写出列名,值与列名一一对应<br>INSERT INTO  表名<br>(列名，列名)<br>values（值，值）<br>方法2：不写列名,值与列中的列名一一对应<br>INSERT INTO  表名<br>values（值，值）<br>方法3：遇到没有的信息可以使用default代替<br>INSERT INTO  表名<br>values（值，default）<br>多行增加<br>方法1（复制）：<br>插入的新表必须存在，列也必须存在，新表和插入列数据类型要保持一致<br>INSERT INTO 新表名（列，列，列）<br>SELECT 插入表列，插入表列，插入表列<br>FROM 插入表名<br>方法2（复制）：<br>新表可以没有，直接在INTO后面输入新表名<br>SELECT 插入表列，插入表列，插入表列<br>INTO 新表名<br>FROM 插入表名<br>方法3<br>INSERT INTO 表名<br>(列名，列名，列名)<br>SELECT 值，值，值 UNION<br>SELECT 值，值，值 UNION</p>
+<h2 id="SELECT-值，值，值"><a href="#SELECT-值，值，值" class="headerlink" title="SELECT 值，值，值 "></a>SELECT 值，值，值 </h2><p>删：<br>方法1：删除指定条件记录<br>delete from 表名   //删除那个表里的东西<br>where id=’1’        //这个表里哪个列<br>方法2：删除含有外键表中对应值记录\<br>delete from 子表名<br>where id=1<br>go<br>delete from 主表名<br>where id=1</p>
+<h2 id="注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加"><a href="#注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加" class="headerlink" title="注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加"></a>注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加</h2><p>改：<br>方法1：更新所有行<br>UPDATE 表名<br>SET 列名=’xx’ , 列名=’xx’, 列名=’xx’</p>
+<p>方法2:更改指定行<br>UPDATE 表名<br>SET 列名=’xx’ , 列名=’xx’, 列名=’xx’<br>WHERE id=1</p>
+<p>方法3:多条件更改指定行<br>UPDATE 表名<br>SET 列名=’xx’ , 列名=’xx’, 列名=’xx’</p>
+<h2 id="WHERE-id-1-and-name-’小朱’"><a href="#WHERE-id-1-and-name-’小朱’" class="headerlink" title="WHERE id=1 and name=’小朱’ "></a>WHERE id=1 and name=’小朱’ </h2><p>查：<br>方法1：查询所有数据行<br>SELECT * FROM 表名</p>
+<p>方法2：查询部分行或列<br>示例1<br>SELECT 列名，列名<br>FROM 表名<br>where 性别=’男’     //条件等于男<br>示例2<br>SELECT 列名，列名<br>FROM 表名<br>where 性别&lt;&gt;’女’      //条件不等于女</p>
+<p>方法3：<br>方式1.   列名 AS 别名<br>SELECT   name AS 姓名，score AS 成绩<br>FROM 表名<br>where 性别&lt;&gt;’女’<br>方式2.    别名=列名<br>SELECT  姓名=name，成绩=score<br>FROM 表名<br>where 性别&lt;&gt;’女’<br>方式3.  列名  别名<br>SELECT  姓名 name，成绩 score<br>FROM 表名<br>where 性别&lt;&gt;’女’</p>
+<p>方法4：合并列表查看<br>SELECT name+sex AS 姓名性别<br>FROM 表名<br>字符串列名+字符串列名<br>整数类型+整数类型</p>
+<p>方法5：查询空值 列名后加 IS NOT NULL<br>SELECT  *     //显示查询的所有列<br>FROM 表名<br>WHERE semail IS NOT NULL</p>
+<p>方法6：使用AS 可以加常量值<br>SELECT 姓名=StudentName,地址=Address,’北京故宫’AS’学校名称’<br>FROM dbo.Student</p>
+<p>限制条件查询的两种方式<br>1，按照固定数目查询<br>SELECT TOP 3 <em>        //查询表的前三行，</em> 代表所有行<br>FROM 表名<br>2，按照百分比查询<br>SELECT TOP 50 PERCENT *      //percent   –百分比<br>FROM 表名</p>
+<p>使用ORDER BY 进行排序：<br>查看排序:升序<br>ORDER BY 列名 ASC<br>查看排序:降序<br>ORDER BY 列名 DESC</p>
+<p>数据查询语句：<br>1、查询将逐行筛选表中的数据，按条件从新组合成“记录集”<br>2、使用IS NULL判断一行中的某列是否为NULL<br>3、使用 ORDER BY进行排序，可以按多列排序<br>4、在查询中，可以使用常量、表达式、运算符</p>
+<h2 id="5、在查询中使用函数可以完成更复杂的查询"><a href="#5、在查询中使用函数可以完成更复杂的查询" class="headerlink" title="5、在查询中使用函数可以完成更复杂的查询"></a>5、在查询中使用函数可以完成更复杂的查询</h2><p>注意事项1：<br>每次插入一行数据，不能插入半行或者几列数据<br>插入的数据是否有效是按照整行的完整性的要求来检验的<br>注意事项2：<br>每个数据值的数据类型，精度和小数位数必须与相应的列的数据类型相同<br>注意事项3：<br>不能为标识列指定值<br>注意事项4：<br>如果在设计表的时候就指定了某列不允许为空，则必须插入数据<br>注意事项5：<br>插入的数据项，要求符合检查约束的要求<br>注意事项6：<br>具有缺省值的列（）可以使用default关键字来代替插入的数值<br>注意事项7：<br>所有代码必须在英文格式下完成<br>注意事项8：<br>数据类型非值类型必须使用 ‘ ‘ 引起</p>
+<p>导出数据<br>1.右击数据库，在弹出的快捷菜单中选择 任务，导出数据 选项<br>2.选择要从何处取得数据 这时候可以选择SQL Server自身<br>3.确定将数据导出到什么位置，这时候可以在上方的目标下拉列表框中选择 平面文件 选项 然后在 文件名 文本框中输入文件的名称或单击 浏览按钮选择文件名，并确定文件相关的选项，<br>4.复制一个过多个表或视图的数据，单击下一步按钮<br>5.选择表名并设置文本文件的格式。<br>6 确定是否立即运行 单击系一部按钮一直到完成转换</p>
+<p>导入数据<br>1.首先准备数据<br>2.有机数据库，在弹出的快捷菜单中悬着 任务-导出数据 xuanxiang<br>3悬着要从何处取得数据呕<br>4.悬着将数据源复制到目标源<br>5确定后，单击下一步按钮，一直到完成转换。</p>
+<p> 第9章<br>字符串函数</p>
+<p>字符串函数<br>1、获取指定字符串的索引号位置<br>SELECT CHARINDEX(‘SERVER’,’sql server’,3)<br>2、获取字符串的长度<br>SELECT LEN(‘我们是SQLserver’) AS 长度<br>3、转换大写字母的函数<br>SELECT UPPER(‘SQL server函数’)<br>4、转换小写字母函数<br>SELECT LOWER(‘SQL SEver’)<br>5、去掉左边空格<br>SELECT LTRIM(‘    你好   ‘)<br>SELECT LEN(LTRIM(‘       你好   ‘))<br>6、去掉右边空格<br>SELECT RTRIM(‘    你好             ‘)<br>SELECT LEN(RTRIM(‘       你好   ‘))<br>SELECT LEN(‘管理员   ‘+’注册’)<br>SELECT LEN(RTRIM(‘管理员   ‘)+’注册’)<br>注意: SQL sever 中不能去掉中间空格和同时去掉左右空格<br>7、获取指定数目的字符串<br>SELECT LEFT(‘史蒂夫顶顶顶’,4)从左边获取<br>SELECT RIGHT(‘史蒂夫顶顶顶’,4)从右边获取<br>8、替换子串的函数<br>SELECT REPLACE(‘莫乐可切.可可’,’可可’,’宝宝’)<br>9、替换并插入函数<br>SELECT STUFF(‘12345678’,3,2,’ABCDEFG’)–数字代表从第三个子串截取两个数替换后面的字符</p>
+<p>日期函数</p>
+<p>日期函数</p>
+<p>1查询当前的系统时间<br>SELECT GETDATE() AS 系统时间<br>2日期添加<br>查询7天后的日期是几号<br>SELECT DATEADD(day,7,GETDATE()) AS ‘7天后的日期’<br>SELECT DATEADD(mm,7,GETDATE()) AS ‘7月后的日期’<br>SELECT DATEADD(yy,7,GETDATE()) AS  ‘7年后的日期’</p>
+<p>3日期减法（后面减去前面的日期）<br>SELECT DATEDIFF(day,’2018-1-26’,’2018-2-26’) AS  相差多少天<br>4指定显示日期中的某个部分<br>SELECT DATENAME(dw,GETDATE()) AS 星期<br>SELECT DATENAME(dd,GETDATE()) AS 日期<br>SELECT DATENAME(mm,GETDATE()) AS 月份<br>5日期中的整数部分<br>LECT DATEPART(DW,GETDATE()) AS 日期<br>SELECT DATEPART(dd,GETDATE()) AS 月份<br>SELECT DATEPART(yy,GETDATE()) AS 年份<br>SELECT DATEPART(ss,GETDATE()) AS 秒数</p>
+<p>数学函数</p>
+<p>数学函数：<br>1随机数函数 0~1小数<br>SELECT RAND() AS 随机数<br>随机数函数 3~6之间的数<br>SELECT RAND()<em>(6-3+1)+3 AS ‘3-6随机小数’<br>SELECT FLOOR(RAND()</em>(6-3+1)+3) AS ‘3-6随机小数’<br>2向上取值整数<br>SELECT CEILING(‘45.34’) AS 比它大的最小整数<br>3向下取值整数<br>SELECT FLOOR(‘45.32’) AS 比它小的最大整数<br>4幂值（5的3次方的值叫做 幂值 5称为底 3称为指数）<br>SELECT POWER(5,3) AS  l 5的3次幂<br>5四舍五入<br>SELECT ROUND(45.45536,2) AS 四舍五入精确精度</p>
+<p>系统函数</p>
+<p>聚合函数：<br>sum()函数   –求和<br>AVG()函数   –求平均值<br>MAX()函数   –求最大值<br>MIN()函数   –求最小值<br>COUNT()函数 –统计行数</p>
+<p>sum求和<br>SELECT SUM(score)<br>FROM dbo.成绩表</p>
+<p>avg求平均分<br>SELECT AVG(score)<br>FROM dbo.成绩表</p>
+<p>MAX最大值  MIN最小值<br>SELECT AVG(score) AS 平均分,MAX(score) AS 最大值,MIN(score) AS 最小值<br>FROM dbo.成绩表<br>where score&gt;=60</p>
+<p>COUNT 统计函数 输出查询列的行数<br>SELECT COUNT(score) AS  ‘大于80分的人数’<br>FROM dbo.成绩表<br>where score&gt;80</p>
+<p>分组查询：<br>–案例1：统计每学期的人数<br>–按照年级分组<br>SELECT 班级,COUNT(*) as 人数<br>FROM dbo.学生信息<br>GROUP BY 班级<br>–注意：select后面查询的信息有聚合函数，那么，列名要么在聚合函数中出现，要么就使用分组进行查询</p>
+<p>–案例2：查询每门课程的平均分<br>SELECT AVG(分数) as 平均分, 学科<br>from dbo.分数表<br>GROUP BY 学科</p>
+<p>–案例3：查询每门课程的平均分，并且按照分数由低到高排序<br>SELECT AVG(分数) AS 平均分,学科<br>from dbo.分数表<br>GROUP BY 学科<br>ORDER BY AVG(分数)<br>–说明：order by 排序 可以对聚合函数排序或者列名排序默认都是asc</p>
+<p>–案例4：如何获取总人数超过2人的班级？<br>SELECT COUNT(<em>) AS 人数, 班级<br>from dbo.学生信息<br>Group by 班级<br>Having COUNT(</em>) &gt;2<br>–说明：where 列名条件 Having 聚合函数条件，Having一般和GROUP BY 联用，放在GROUP BY 后面</p>
+<p>–案例5：统计平均分大于60 分的课程的平均分<br>SELECT 学科,AVG(分数)<br>FROM dbo.分数表   –从哪里开始查找<br>–WHERE 学科=1          –列名条件 模糊查询，关系表达式查询<br>GROUP BY 学科             –分组筛选<br>Having AVG(分数)&gt;50   –分组后的聚合函数筛选<br>分析下面T-SQL:</p>
+<p>分析：分类部门，显示工资超过2000的人数，并且部门人数要超过1人，不然不显示<br>分组查询是根据表中不同的组分类查询输出的<br>Having子句能够在分组的基础上，再次进行筛选<br>GROUP BY是分组，ORDER BY是排序 先分组在排序<br>在一个SQL语句中  group by, where having 使用次序：</p>
+<p>WHERE 子句从数据库中去掉不符合其搜索条件的数据；GROUP BY 子句搜索数据库行到各个组中，统计函数为各个组计算统计值；HAVING 子句去掉不符合其搜索条件的各组数据行</p>
+<p>多表连接查询</p>
+<p>内连接语句：</p>
+<p>内连接查询：<br>内连接查询是最典型。最常用的连接查询，它根据表中共同的列来进行匹配，特别是两个表存在主外键关系时通常会使用内连接查询<br>外连接查询：<br>外连接查询时至少返回一个表中的所有记录，根据匹配条件有选择性的返回另一张表的记录。外连接可以时左外连接或右外连接</p>
+<p>INNER JOIN 用来连接两个表<br>INNER 可以省略<br>ON 用来设置条件</p>
+<p>内连接查询通常不仅仅连接两个表，有时连接三个或更多<br>示例：<br>select s. sname as 学生姓名，cs.courename as 课程名称，c.score as 成绩<br>from students as s<br>inner join score as c on(s.scoder=c.studentid)<br>inner join course as cs on(cs.courseid=c.courseid)<br>案例1：使用内联接完成 查询学员姓名，科目号和分数<br>内连接写法：<br>SELECT 学生信息.studentNO,学生信息.姓名,分数表.学科,分数表.分数<br>FROM 学生信息,分数表<br>WHERE 分数表.学号=学生信息.studentNO<br>内连接写法（简便写法）：<br>SELECT S.studentNO,S.姓名,R.学科,R.分数<br>FROM 学生信息 AS S,分数表 AS R<br>WHERE R.学号=S.studentNO<br>三个语法的显示结果相同：</p>
+<p>语法格式:<br>SELECT 表2.列名1,表2.列名2,表1.列名1,表1.列名2<br>FROM 表1 as 别名 ，表2 as 别名<br>WHERE 表1.主键列=表2.外键列</p>
+<p>内连接写法2（使用 inner join）<br>SELECT S.studentNO,S.姓名,R.学科,R.分数<br>FROM 学生信息 AS S<br>inner join 分数表 AS R<br>on R.学号=S.studentNO<br>语法格式：<br>SELECT 表2.列名1,表2.列名2,表1.列名1,表1.列名2<br>FROM 表1 as 别名<br> inner join 表2 as 别名<br>on 表1.主键列=表2.外键列<br>左外连接：<br>原则：左边的表为主表，主表的信息全部显示，匹配的正常显示，不匹配的NULL值补位显示<br>查询所有学生的考试成绩和姓名，科目名<br>左外连接写法：<br>SELECT 姓名,学科,分数<br>FROM 学生信息<br>left outer join 分数表<br>on 学生信息.studentNO=分数表.学号<br>显示结果：</p>
+<p>左外连接写法2（左边从表，右边主表）：<br>SELECT 姓名,学科,分数<br>FROM 分数表<br>left outer join 学生信息<br>on 学生信息.studentNO=分数表.学号<br>显示结果：</p>
+<p>语法格式：<br>SELECT<br>FROM 主表<br>LEFT OUTER JOIN 从表<br>on 主表.通用列=从表.通用列</p>
+<p>分组查询+连接查询<br>1、分组查询是针对表中不同的组分类统计和输出的<br>2、Having子句能够在分组的基础上，再次进行筛选</p>
+<p>QQ项目</p>
+<p>1–查询qq号为88662753的用户的所有好友<br>select r.RelationQQID,NickName,Age<br>from dbo.BaseInfo as b<br>inner join dbo.Relation as r<br>on r.QQID=88662753 and r.RelationStatus=0 and r.RelationQQID=b.QQID</p>
+<p>2–查询qq号为54789625的好友中每个省份的总人数 人数从大到小排序<br>select b.Province, count(<em>) as 人数<br>from   dbo.BaseInfo as b<br>inner join dbo.Relation as r<br>on r.QQID=54789625 and r.RelationStatus=0 and r.RelationQQID=b.QQID<br>group by b.Province<br>order by  count(</em>) desc</p>
+<p>3–查询qq号为54789625的好友中等级为10级以上的好友<br>—方法1<br>select r.RelationQQID as 好友qq,b.NickName,b.Age,u.Level<br>from dbo.Relation as r<br> join dbo.BaseInfo as b<br>on r.QQID=54789625 and r.RelationStatus=0 and r.RelationQQID=b.QQID<br>join dbo.QQUser as u<br>on u.Level&gt;10 and u.QQID=r.RelationQQID<br>–方法2<br>select r.RelationQQID as 好友qq,q.Level<br>from dbo.QQUser as q<br>inner join dbo.Relation as r<br>on r.QQID=54789625 and r.RelationStatus=0 and r.RelationQQID=q.QQID and q.level&gt;10</p>
+<p>4–查询被当作黑名单人物次数排名前20的用户<br>select top 20 RelationQQID as qq号,COUNT(<em>) as 人数,NickName<br>from dbo.Relation as r<br>inner join dbo.BaseInfo as b<br>on   r.RelationQQID=b.QQID and RelationStatus=1<br>group by RelationQQID,NickName<br>order by COUNT(</em>) desc </p>
+<p>select top 20  r.RelationQQID as qq号,COUNT(<em>) as 人数<br>from dbo.Relation as r<br>inner join dbo.BaseInfo as b<br>on r.QQID=b.QQID and r.RelationStatus=1<br>group by r.RelationQQID<br>order by COUNT(</em>) desc</p>
+<p>5–查询当前用户在线信息<br>select *<br>from dbo.QQUser<br>where OnLine=0</p>
+<p>6–查询qq号码为54789625的好友中隐身的用户信息<br>select  r.RelationQQID,b.NickName,b.Sex,b.Province<br>from dbo.QQUser as q<br>inner join dbo.Relation as r<br>on r.QQID=54789625 and r.RelationStatus=0 and q.OnLine=2 and r.RelationQQID=q.QQID<br>inner join dbo.BaseInfo as b<br>on b.QQID=r.RelationQQID</p>
+<p>6–查询好友超过20的信息<br>–方法1<br>select r.QQID,COUNT(<em>) as 好友数量,b.NickName,b.Sex,b.Age,b.Province<br>from dbo.Relation  as r<br>inner join dbo.BaseInfo as b<br>on r.RelationStatus=0 and r.QQID=b.QQID<br>group by r.QQID,b.NickName,b.Sex,b.Age,b.Province<br>having  COUNT(</em>)&gt;=20<br>–方法2<br>select b.NickName, COUNT(<em>) as 人数<br>from  dbo.BaseInfo as b<br>inner join dbo.Relation as r<br>on b.QQID=r.QQID and RelationStatus=0<br>group by b.NickName<br>having  COUNT(</em>)&gt;=20</p>
+<p>7–查询北京市 年龄在18~45岁在线用户的信息，<br>select b.QQID,NickName,Sex,Age,Province,City<br>from dbo.BaseInfo  as b<br>inner join dbo.QQUser as u<br>on City=’北京’ and Age&gt;=18 and Age&lt;=45 and u.OnLine=0 and u.QQID=b.QQID</p>
+<p>8–查询昵称为‘小笨猪’的用户信息<br>select NickName,Age,Sex,Province,QQID,Phone<br>from dbo.BaseInfo<br>where NickName=’小笨猪’</p>
+<p>9–查询qq号码为 54789625的用户的好友中每个省份的总数，并且按照总人数由大到小排列<br>select Province,count(<em>)<br>from dbo.BaseInfo as b<br>inner join dbo.Relation as r<br>on b.QQID=r.RelationQQID and RelationStatus=0 and r.QQID=54789625<br>group by Province<br>order by count(</em>) desc</p>
+<p>10–查询至少300天未登录qq的用户的qq号码和最后登录时间，等级，昵称，年龄，并按照时间降序排列<br>select b.QQID,lastLogTime,Level,NickName,Age,DATEDIFF(day,lastLogTime,’2013-6-30’)  as 多少天没有登录<br>from dbo.BaseInfo as b<br>inner join dbo.QQUser as u<br>on u.QQID=b.QQID and DATEDIFF(day,lastLogTime,’2013-6-30’) &gt;300<br>order by DATEDIFF(day,lastLogTime,’2013-6-30’) </p>
+<p>今天我隐身登录，假设我的qq号码为8855678<br>update dbo.QQUser<br>set OnLine=2,lastLogTime=GETDATE()<br>where QQID=8855678<br>修改我的昵称为“被淹死的鱼”地址为“解放中路6号院106室”<br>update dbo.BaseInfo<br>set NickName=’被淹死的鱼’,Address=’解放中路6号院106室’<br>where QQID=8855678<br>将我的好友“248624066”拖进黑名单<br>update dbo.Relation<br>set RelationStatus=1<br>where QQID=8855678 and RelationQQID=248624066<br>为了提高qq用户聊天的积极性，把等级小于六级的用户等级提示一级<br>update dbo.QQUser<br>set Level=Level+1<br>where Level<6 为了奖励用户，将好友数量超过20的用户等级提升一个级别="" select="" r.qqid="" as="" qq号码,count(*)="" 人数,="" u.level="" from="" dbo.relation="" r="" inner="" join="" dbo.qquser="" u="" on="" u.qqid="r.QQID" and="" relationstatus="0" group="" by="" r.qqid,u.level="" having="" count(*)="">20<br>select * from dbo.Relation where QQID=54789625<br>把qq号码为286314的用户的好友“嘟嘟鱼”拖进黑名单<br>update dbo.Relation<br>set RelationStatus=1<br>inner join dbo.QQUser<br>where QQID=286314,<br>把qq号码为54789625的用户黑名单中的用户删除<br>delete<br>from dbo.Relation<br>where QQID=54789625 and RelationStatus=1<br>qq号码为622013019用户多次在qq中发布违法信息，在关系表删除用户622013019的信息，在基本信息表中删除该用户，还有用户表<br>delete<br>from dbo.Relation<br>where QQID=622013019<br>delete<br>from dbo.QQUser<br>where QQID=622013019<br>delete<br>from dbo.BaseInfo<br>where QQID=622013019 </6></p>
+<p>ADO.NET<br>ADO.NET的主要组件：</p>
+<p>ADO.NET结构图：</p>
+<p>.NET数据提供程序：<br>SQL Server ：使用 System.Data.SqlClient命名空间<br>ADO.NET数据提供程序的四个核心对象：<br>1 connection对象：负责连接数据库<br>2 command对象：负责对数据库执行命令<br>3 datareader对象：负责从数据源读取数据<br>4 dataSAdapter对象：负责数据集和数据库的连接<br>Connection对象的作用：<br>建立应用成语与数据库之间的连接，相当于在两者之间建立一座桥梁<br>Command对象的作用：<br>执行命令从数据库中返回结果，相当于桥梁上的运输工具</p>
+<p>不同的数据库连接相应的连接类：</p>
+<p>连接数据库步骤：</p>
+<p> 示例分析代码：</p>
+<p>使用Command步骤：<br>1、创建数据库连接<br>2、定义SQL语句<br>3、创建Command对象<br>4、打开连接对象<br>5、执行命令<br>6、关闭连接</p>
+<p>Command对象主要方法：<br>ExecuteNonQuery() 执行增、删、改(不执行查询)<br>ExecuteReader() 执行读取数据<br>ExecuteScalar()返回单个值，执行带count(*)的SQL语句<br>如何处理异常：<br>try 尝试<br>catch 抓捕；捕获</p>
+<p>String 和StringBuilder<br>String类具有很多字符串处理方法，但在替换、添加、删除字符串时，StringBuilder类对象的执行速度要快很多，<br>语法：<br>//声明一个空的StringBuilder对象<br>StringBuilder 对象名称=new Stringbuilder();<br>//声明并赋值<br>StringBuilder 对象名称=new Stringbuilder(”字符串初始值“)；<br>StringBuilder对象常用的属性和方法：</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2016/07/27/mybatis/" class="next-post btn btn-default" title="SSM">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SELECT-值，值，值"><span class="toc-text">SELECT 值，值，值 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加"><span class="toc-text">注意：删除主表的数据必须先删除子表中的数据，主表里有的数据，子表才能添加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHERE-id-1-and-name-’小朱’"><span class="toc-text">WHERE id=1 and name=’小朱’ </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、在查询中使用函数可以完成更复杂的查询"><span class="toc-text">5、在查询中使用函数可以完成更复杂的查询</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
