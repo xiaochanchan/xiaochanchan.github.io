@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSH | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSH">
+            
+	            SSH
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/02/03</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>667</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>Hibernate<br>1.Hibernate优点：<br>1）对象/关系数据库映射(Basic O/R Mapping)<br>它使用时只需要操纵对象，使开发更对象化，抛弃了数据库中心的思想，完全的面向对象思想。<br>2）透明持久化(Persistent)<br>带有持久化状态的、具有业务功能的单线程对象，此对象生存期很短。这些对象可能是普通的JavaBeans/POJO，这个对象没有实现第三方框架或者接口，唯一特殊的是他们正与（仅仅一个）Session相关联。一旦这个Session被关闭，这些对象就会脱离持久化状态，这样就可被应用程序的任何层自由使用。（例如，用作跟表示层打交道的数据传输对象。）<br>3）事务Transaction (org.Hibernate.Transaction)<br>应用程序用来指定原子操作单元范围的对象，它是单线程的，生命周期很短。它通过抽象将应用从底层具体的JDBC、JTA以及CORBA事务隔离开。某些情况下，一个Session之内可能包含多个Transaction对象。尽管是否使用该对象是可选的，但无论是使用底层的API还是使用Transaction对象，事务边界的开启与关闭是必不可少的。<br>　　（4）它没有侵入性，即所谓的轻量级框架。<br>　　（5）移植性会很好。<br>　　（6）缓存机制。提供一级缓存和二级缓存。<br>　　（7）简洁的HQL编程。<br>2.Hibernate缺点：<br>1）Hibernate在批量数据处理的时候是有弱势。</p>
+<h2 id="2）针对某一对象-单个对象-简单的查-改-删-增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点-要使用数据库的特定优化机制的时候，不适合用Hibernate。"><a href="#2）针对某一对象-单个对象-简单的查-改-删-增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点-要使用数据库的特定优化机制的时候，不适合用Hibernate。" class="headerlink" title="2）针对某一对象(单个对象)简单的查\改\删\增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点;要使用数据库的特定优化机制的时候，不适合用Hibernate。"></a>2）针对某一对象(单个对象)简单的查\改\删\增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点;要使用数据库的特定优化机制的时候，不适合用Hibernate。</h2><p>Hibernate与Mybatis的区别<br>相同点：<br>1）Hibernate与MyBatis都是通过SessionFactoryBuider由XML配置文件生成SessionFactory，由SessionFactory 生成Session，由Session来开启执行事务和SQL语句。<br>2）Hibernate和MyBatis都支持JDBC和事务处理。<br>3）基于ORM思想解决了entity和数据库的映射问题<br>不同点：<br>1）sql方面：mybaits通过mapper.xml维护映射结果，程序员手动编写sql相比hibernate自动生成hql（hibernate sql）更加灵活，hibernate的hql数据库移植性更好，体现在强壮性。hibernate在级联删除的时候效率低；数据量大， 表多的时候，基于关系操作会变得复杂。</p>
+<h2 id="2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。"><a href="#2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。" class="headerlink" title="2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。"></a>2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。</h2><p>Hibernate环境搭建<br>1、部署jar文件<br>2、创建Hibernate配置文件hibernate.cfg.xml</p>
+<p>3、创建持久化类和映射文件（映射文件名与持久类同名以“.hbm.xml”为后缀）</p>
+<hr>
+<p>主键查询一条数据:<br>1、session.get(Class clazz,Serializable id);<br>2、session.load(Class clazz.Serializable  id)<br>开启事务:<br>session.beginTransaction()<br>新增:<br>session.save(实体类对象)；<br>修改:<br>Dept dept=session.load(Class clazz.Serializable  id)<br>dept.setName(“张三”)；<br>dept.setAge(18);<br>删除:<br>Dept dept=session.load(Class clazz.Serializable  id)</p>
+<h2 id="session-delete-dept"><a href="#session-delete-dept" class="headerlink" title="session.delete(dept);"></a>session.delete(dept);</h2><p>Hibernate中Java对象三种状态<br>1瞬时状态（Transient）<br>通过new创建对象后，对象并没有立即持久化 他并未与数据库发生任何关系，此时java对象的状态为瞬时状态，Session对与瞬时状态的对象一无所知，当对象不在被其他对象引用时他的数据也就丢失了，对象将按照垃圾回收机制处理<br>2持久状态（Persistent）<br>当对象与Session关联 被Session管理时 他就处于持久状态，处于持久状态的对象拥有数据标识（数据库中的主键值）那么对象是什么时候与session对象关联的呢<br>有两种方式：第一种通过Session的查询接口或者是get（）方法或者是load方法（）从数据库中加载对象的时候，家在状态的对象，通过调用session的save方法或者saveOrUpdate方法时java对象也与session发生关联，对于处于持久状态的对象，session会跟踪和管理他们，如果对象的内部状态发生了任何变化，hibernate会选择合适的实际（如事务提交时）将变更固化到数据库中。<br>3游离状态（Detached）<br>处于持久化的对象 脱离与其关联的Session管理后对象就处于游离状态，处于游离状态的对象Hibernate无法感知到对象的任何操作Session提供了两个方法（Update（） merge（））将处于游离状态的对象与一个新的session发生关联，这是对象的状态就从游离转持久化。</p>
+<hr>
+<p>脏检查（数据前后发生变化的对象）<br>示例：<br>Dept dept=session.load(Class clazz.Serializable  id)<br>dept.setName(“张三”)；<br>dept.setAge(18);<br>刷新缓存机制<br>1、应用程序调用session的flush()方法时</p>
+<h2 id="2、应用程序调用Transaction的commit-方法时"><a href="#2、应用程序调用Transaction的commit-方法时" class="headerlink" title="2、应用程序调用Transaction的commit()方法时"></a>2、应用程序调用Transaction的commit()方法时</h2><p>HQL<br>Query对象<br>String hql=”from Dept”;<br>Query query=session.createQuery(hql);<br>参数绑定<br>1、按参数位置绑定<br>//参数为字符串调用 setString()方法……..，第一个参数代表位置，第二个代表hql中的值<br>String hql=”from Dept where id=? and name=?”;<br>Query query=session.createQuery(hql);<br>query.setInt(0,12);<br>query.setString(1,”张三”)；<br>2、按参数名称绑定<br>String hql=”from Dept where id=:id and name=:name”;<br>Query query=session.createQuery(hql);<br>query.setInt(“id”,12);<br>query.setString(“name”,”张三”)；<br>//query接口中定义不同类型的参数方法，同时还提供了setParameter()用来绑定任意类型<br>Query分页查询<br>setFirstResult(其实位置)<br>setMaxResults(页数)<br>实例：<br>List<emp> list=session.createQuery(“from Emp”)<br>.setFirstResult((pageNo-1)*size)</emp></p>
+<h2 id="setMaxResults-size"><a href="#setMaxResults-size" class="headerlink" title=".setMaxResults(size);"></a>.setMaxResults(size);</h2><p>关联映射<br>对象间的关联分为一对多，多对一和多对多等几种情况，关联是有方向的，可以是双向关联，也可以是单向的关联</p>
+<h2 id="hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作"><a href="#hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作" class="headerlink" title="hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作"></a>hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作</h2><p>连接查询<br>现在假设有user和stundent两张表<br>1.默认查询的情况:<br>from User u where u.name like ‘%Java%’<br>2.迫切左外连接<br>from User u left join fetch u.student s where u.name like ‘%java%’<br>3.左外连接<br>from User u left join u.student s where u.name like ‘%java%’<br>4.迫切内连接<br>from User u inner join fetch u.student where u.name like ‘%java%’<br>5.内连接<br>from User u inner join u.student where u.name like ‘%java%’<br>6.右外连接<br>from User u right join u.student where u.name like ‘%java%’</p>
+<h2 id="总结大概就这些吧-对于迫切连接的话-基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化-而后者采用的是映射文件配置的延迟检索策略-因此student集合不会被立即初始化"><a href="#总结大概就这些吧-对于迫切连接的话-基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化-而后者采用的是映射文件配置的延迟检索策略-因此student集合不会被立即初始化" class="headerlink" title="总结大概就这些吧!对于迫切连接的话,基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化,而后者采用的是映射文件配置的延迟检索策略,因此student集合不会被立即初始化"></a>总结大概就这些吧!对于迫切连接的话,基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化,而后者采用的是映射文件配置的延迟检索策略,因此student集合不会被立即初始化</h2><p>聚合函数<br>count()    //统计条数<br>sum()    //和<br>min()    //最小值<br>max()    //最大值</p>
+<h2 id="avg-平均值"><a href="#avg-平均值" class="headerlink" title="avg()    //平均值"></a>avg()    //平均值</h2><p>子查询关键字<br>all            返回所有记录<br>any            返回任意一条记录<br>some        “any”相同<br>in            “=any”相同</p>
+<h2 id="exists-至少返回一条语句"><a href="#exists-至少返回一条语句" class="headerlink" title="exists        至少返回一条语句"></a>exists        至少返回一条语句</h2><p>注解<br>Hibernate提供了注解功能，可以代替hbm.xml文件完成关系映射工作<br>Hql<br>持久化类常用注解</p>
+<p>@Table可以省略，省略时表名必须与持久化名相同</p>
+<h2 id="Column可以省略，省略时字段名必须与属性名相同"><a href="#Column可以省略，省略时字段名必须与属性名相同" class="headerlink" title="@Column可以省略，省略时字段名必须与属性名相同"></a>@Column可以省略，省略时字段名必须与属性名相同</h2>
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2017/01/15/NET/" class="next-post btn btn-default" title=".NET">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">.NET</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2）针对某一对象-单个对象-简单的查-改-删-增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点-要使用数据库的特定优化机制的时候，不适合用Hibernate。"><span class="toc-text">2）针对某一对象(单个对象)简单的查\改\删\增，不是批量修改、删除，适合用Hibernate；而对于批量修改、删除，不适合用Hibernate，这也是OR框架的弱点;要使用数据库的特定优化机制的时候，不适合用Hibernate。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。"><span class="toc-text">2）缓存方面：mybatis和hibernate都可以使用第三方缓存，而hibernate相比maybatis有更好的二级缓存机制。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session-delete-dept"><span class="toc-text">session.delete(dept);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、应用程序调用Transaction的commit-方法时"><span class="toc-text">2、应用程序调用Transaction的commit()方法时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setMaxResults-size"><span class="toc-text">.setMaxResults(size);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作"><span class="toc-text">hibernate通过配置的方式，将对象的关联关系映射到数据库上，方便完成多表的持久化操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结大概就这些吧-对于迫切连接的话-基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化-而后者采用的是映射文件配置的延迟检索策略-因此student集合不会被立即初始化"><span class="toc-text">总结大概就这些吧!对于迫切连接的话,基本区别在于如果是用迫切连接的话当进行连接检索时student集合会立即被初始化,而后者采用的是映射文件配置的延迟检索策略,因此student集合不会被立即初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#avg-平均值"><span class="toc-text">avg()    //平均值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exists-至少返回一条语句"><span class="toc-text">exists        至少返回一条语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Column可以省略，省略时字段名必须与属性名相同"><span class="toc-text">@Column可以省略，省略时字段名必须与属性名相同</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
